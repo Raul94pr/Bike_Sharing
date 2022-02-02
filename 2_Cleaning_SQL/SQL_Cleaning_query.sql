@@ -50,7 +50,7 @@ ALTER TABLE Temp_Table  ALTER COLUMN member_casual VARCHAR;
 /*Correction Incomplete Data */
 
 UPDATE Temp_Table
-SET Temp_Table.start_station_name = REPLACE(Stations_2017.name
+SET Temp_Table.start_station_name = Stations_2017.name
 FROM Temp_Table,Stations_2017
 WHERE Temp_Table.start_station_name IS NULL OR Temp_Table.start_station_name = ''
 AND Temp_Table.start_lat = Round(Stations_2017.latitude,2) AND Temp_Table.start_lng = Round(Stations_2017.longitude,2);
